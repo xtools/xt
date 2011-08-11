@@ -1,0 +1,18 @@
+#!/bin/sh
+
+MESSAGE=$1
+COMMAND=$2
+
+if [ "$XTQ" ]; then
+	echo "$MESSAGE"
+else
+	echo $COMMAND
+fi
+
+OUTPUT=`$COMMAND`
+RESULT=$?
+if [ 0 -ne $RESULT ]; then
+   echo $OUTPUT
+fi
+
+exit $RESULT

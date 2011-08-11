@@ -1,0 +1,5 @@
+#!/bin/sh
+
+PROGRAM=$1
+
+ls -l `which $PROGRAM`

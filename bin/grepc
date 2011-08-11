@@ -1,0 +1,5 @@
+#!/bin/sh
+
+PATTERN=$1
+
+find . -name "*.[c,h]" -print -exec grep "$PATTERN" {} \;

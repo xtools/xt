@@ -1,0 +1,34 @@
+xtools :: containers and networking in c
+  + bin                                        (environment, makefile, scripts)
+  + case                                                           (containers)
+  + config                                                (config file reading)
+  + core                                                              (objects)
+  + file                                                      (file read/write)
+  + net                                              (client/server networking)
+  + sync                                               (thread synchronization)
+
+Set up environment
+  + point $XT to the directory containing this readme.txt file
+  + add $XT/bin to $PATH
+
+Install dependencies
+  + C standard headers                                       ( stddef.h, etc. )
+    + point $XTC to them                ( somewhere like /usr/lib/gcc/include )
+  + an ANSI C compiler                  ( http://en.wikipedia.org/wiki/ANSI_C )
+  + POSIX Threads                ( http://en.wikipedia.org/wiki/POSIX_Threads )
+  + networking headers -- any non-standard??
+
+Make
+  + "cd $XT"
+  + "make help" explains the make commands
+
+If you want to commit back to the project
+  + read and follow the guide in doc/style.txt -- missing!!
+  + "make test", "make release" and "make clean" before committing
+
+Contact
+  + source code                     ( http://xtools.clownfysh.com/source-code )
+  + announce blog                              ( http://xtools.clownfysh.com/ )
+  + announce twitter                     ( http://twitter.com/xtools_announce )
+  + commits twitter                       ( http://twitter.com/xtools_commits )
+  + email                                        ( clownfysh+xtools@gmail.com )

@@ -1,0 +1,122 @@
+(define-abbrev-table 'c-mode-abbrev-table '(
+    ("xarrayc" "ih_core_array_t *fz;
+fz = ih_core_array_create(unsigned long initial_size,
+        ih_core_object_compare_f compare_objects,
+        ih_core_object_copy_f copy_object,
+        ih_core_object_destroy_f destroy_object);
+if (fz) {
+
+} else {
+    ih_core_trace(\"ih_core_array_create\");
+}" nil 0)
+    ("xarrayd" "ih_core_array_destroy();" nil 0)
+    ("xarrayi" "ih_core_array_iterate_start(fz);
+while ((object = ih_core_array_iterate_next(fz))) {
+
+}" nil 0)
+    ("xas" "assert();" nil 0)
+    ("xb" "ih_core_bool_t" nil 0)
+    ("xdo" "do {
+
+} while ();" nil 0)
+    ("xenum" "enum fz_t {
+
+};
+typedef enum fz_t fz_t;" nil 0)
+    ("xf" "ih_core_bool_false" nil 0)
+    ("xfor" "for (; ; ) {
+
+}" nil 0)
+    ("xfunc" "_t f()
+{
+    assert();
+
+
+
+    return ;
+}" nil 0)
+    ("xif" "if () {
+
+}" nil 0)
+    ("xife" "if () {
+
+} else {
+
+}" nil 0)
+    ("xifep" "if () {
+
+} else {
+    ih_core_trace(\"\");
+}" nil 0)
+    ("xinc" "#include \".h\"" nil 0)
+    ("xle" "ih_audit_log_enter(log, \"\", \"\");" nil 0)
+    ("xlistc" "ih_core_list_t *fz;
+fz = ih_core_list_t *ih_core_list_create(ih_core_object_copy_f copy_object,
+        ih_core_object_destroy_f destroy_object);
+if (fz) {
+
+} else {
+    ih_core_trace(\"ih_core_list_create\");
+}" nil 0)
+    ("xlistd" "ih_core_list_destroy();" nil 0)
+    ("xlisti" "ih_core_list_iterate_start(fz);
+while ((object = ih_core_list_iterate_next(fz))) {
+
+}" nil 0)
+    ("xlt" "ih_audit_log_trace(log, \"\", \"\");" nil 0)
+    ("xmalloc" "fz = malloc(sizeof *fz);
+if (fz) {
+
+} else {
+    ih_core_trace(\"malloc\");
+}" nil 0)
+    ("xmxd" "if (pthread_mutex_destroy(&fz, NULL) != 0) {
+    ih_core_trace(\"pthread_mutex_destroy\");
+}" nil 0)
+    ("xmxi" "if (pthread_mutex_init(&fz, NULL) != 0) {
+    ih_core_trace(\"pthread_mutex_init\");
+}" nil 0)
+    ("xmx" "pthread_mutex_lock(&fz);
+{
+}
+pthread_mutex_unlock(&fz);" nil 0)
+    ("xo" "ih_core_object_t *" nil 0)
+    ("xp" "printf(\"\", ...);" nil 0)
+    ("xr" "return ;" nil 0)
+    ("xsetc" "ih_core_set_t *fz;
+fz = ih_core_set_create(ih_core_object_compare_f compare_objects,
+        ih_core_object_copy_f copy_object,
+        ih_core_object_destroy_f destroy_object);
+if (fz) {
+
+} else {
+    ih_core_trace(\"ih_core_set_create\");
+}" nil 0)
+    ("xsetd" "ih_core_set_destroy();" nil 0)
+    ("xseti" "ih_core_set_iterate_start(fz);
+while ((object = ih_core_set_iterate_next(fz))) {
+
+}" nil 0)
+    ("xstruct" "struct fz_t {
+
+};
+typedef struct fz_t fz_t;" nil 0)
+    ("xt" "ih_core_bool_true" nil 0)
+    ("xtr" "ih_core_trace(\"\");" nil 0)
+    ("xtre" "ih_core_trace_exit(\"\");" nil 0)
+    ("xw" "while () {
+
+}" nil 0)
+    ))
+
+(define-abbrev-table 'fundamental-mode-abbrev-table '(
+    ))
+
+(define-abbrev-table 'global-abbrev-table '(
+    ))
+
+(define-abbrev-table 'lisp-mode-abbrev-table '(
+    ))
+
+(define-abbrev-table 'text-mode-abbrev-table '(
+    ))

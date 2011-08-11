@@ -1,0 +1,12 @@
+#!/bin/sh
+
+TESTS=$*
+
+for TEST in $TESTS; do
+	echo $TEST
+	$TEST --running-batch-tests yes
+	EXIT_CODE=$?
+	if [ 0 -ne $EXIT_CODE ]; then
+		exit $EXIT_CODE
+	fi
+done

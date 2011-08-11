@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+if [ ! -e .make-library ]; then
+  exit 0
+fi
+
+mode_identifier=$1
+library_id=`cat .make-library`
+library_name=lib$library_id.a
+
+if [ "$XTQ" ]; then
+  echo $mode_identifier $library_name
+else
+  echo "ar rcs $XT/$library_name $objects"
+fi
+
+objects=`find $XT -name "*.o"`
+ar rcs $XT/$library_name $objects

@@ -1,0 +1,5 @@
+touch .make-depend
+touch .make-options
+
+git add .make-depend
+git add .make-options

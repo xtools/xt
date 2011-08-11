@@ -1,0 +1,8 @@
+#!/bin/sh
+
+OLD_NAME=$1
+NEW_NAME=$2
+
+git mv $OLD_NAME.h $NEW_NAME.h
+git mv $OLD_NAME.c $NEW_NAME.c
+git mv ${OLD_NAME}.test.c ${NEW_NAME}.test.c

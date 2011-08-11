@@ -1,0 +1,7 @@
+#!/usr/bin/env perl
+
+$pwd = `pwd`;
+chomp($pwd);
+$last_slash = rindex($pwd, "/");
+$pwd_short = substr($pwd, $last_slash + 1);
+printf("$pwd_short\n");

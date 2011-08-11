@@ -1,0 +1,13 @@
+#!/usr/local/bin/perl
+
+$filename = shift();
+open(FILE, $filename);
+$line_count = 0;
+@lines = ();
+while ($line = <FILE>) {
+  #chomp($line);
+  $lines[$line_count] = $line;
+  $line_count++;
+}
+$random_line = (rand() * 100000) % $line_count;
+print($lines[$random_line]);

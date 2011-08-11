@@ -1,0 +1,12 @@
+#!/usr/bin/env perl
+
+while ($line = <>) {
+    chomp($line);
+    if ($line =~ /(\d+):\t(.*)/) {
+        $line_number = $1;
+        $line_number = sprintf("% 5d", $line_number);
+        $text = $2;
+        $text = substr($text, 0, 73);
+        printf("$line_number: $text\n");
+    }
+}

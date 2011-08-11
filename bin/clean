@@ -1,0 +1,15 @@
+#!/bin/sh
+
+DIRS=`find . -name .clean | cut -f2 -d"." | cut -c2-`
+for DIR in $DIRS; do
+  #echo clean $DIR
+  cd $DIR
+  FILES=`cat .clean`
+  for FILE in $FILES; do
+    if [ -e $FILE ]; then
+      #echo   rm $FILE
+      rm $FILE
+    fi
+  done
+  cd - >/dev/null
+done

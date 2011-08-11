@@ -1,0 +1,9 @@
+#!/bin/sh
+
+linecount=`find . -name "*.h" -o -name "*.c" -exec cat {} \; | wc -l`
+linecount_nice=`nice-number $linecount`
+
+file_count=`find . -name "*.h" -o -name "*.c" | wc -l`
+file_count_nice=`nice-number $file_count`
+
+echo "$linecount_nice lines of C in $file_count_nice files"

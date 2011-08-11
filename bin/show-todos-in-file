@@ -1,0 +1,17 @@
+#!/bin/sh
+
+FILE=$1
+
+if [ ! -f $FILE ]; then
+    echo "Supply the name of a file." >&2
+    exit 1
+fi
+
+TODOS=`grep -i todo $FILE`
+if [ "" != "$TODOS" ]; then
+    underline "$FILE"
+    grep -i -n todo $FILE | perl -pe 's/^(\d+:)\s*(\S)/$1\t$2/' | pad-todos
+    echo
+fi
+
+exit 0

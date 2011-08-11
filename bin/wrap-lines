@@ -1,0 +1,30 @@
+#!/usr/bin/env perl
+
+$original_width = shift();
+if (!$original_width) {
+    $original_width = 80;
+}
+
+$indent_string = shift();
+$indent_string_width = length($indent_string);
+
+$max_lines = shift();
+
+$line_count = 0;
+while ($line = <>) {
+    $first = 1;
+    $width = $original_width;
+    while ($portion = substr($line, 0, $width)) {
+        $line = substr($line, $width);
+        if ($first) {
+            $first = 0;
+            $width = $original_width - $indent_string_width;
+        } else {
+            printf($indent_string);
+        }
+        printf($portion);
+    }
+    $line_count++;
+    if ($max_lines && $line_count >= $max_lines) {
+    }
+}

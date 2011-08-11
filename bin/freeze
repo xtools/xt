@@ -1,0 +1,14 @@
+#!/bin/sh
+
+file=$1
+
+if [ ! -f $file ]; then
+  echo $file does not exist
+  exit 1
+fi
+
+gpg --output $file.jeo --symmetric $file
+RETURN=$?
+if [ 0 = $RETURN ]; then
+  rm $file
+fi

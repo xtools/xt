@@ -1,0 +1,10 @@
+#!/usr/bin/env perl
+
+my $s = shift();
+my $l = length($s);
+
+print "$s\n";
+for (my $i = 0; $i < $l; $i++) {
+  print "-";
+}
+print "\n";

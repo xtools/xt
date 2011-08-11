@@ -1,0 +1,10 @@
+#!/bin/sh
+
+ETAGS=`which etags`
+if [ "" = "$ETAGS" ]; then
+    echo "etags not found"
+    exit 1
+fi
+
+FILES=`find . -name "*.h" -o -name "*.c"`
+etags --output .etags $FILES
