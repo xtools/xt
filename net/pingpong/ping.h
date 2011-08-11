@@ -12,7 +12,8 @@ xt_core_bool_t xt_pingpong_ping_add_to_message(void *ping_object,
 
 xt_pingpong_ping_t *xt_pingpong_ping_create(char *string);
 
-xt_pingpong_ping_t *xt_pingpong_ping_create_from_message(xt_core_message_t *message);
+xt_pingpong_ping_t *xt_pingpong_ping_create_from_message
+(xt_core_message_t *message);
 
 void xt_pingpong_ping_destroy(xt_pingpong_ping_t *ping);
 

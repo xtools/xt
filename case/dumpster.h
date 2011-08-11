@@ -12,8 +12,7 @@ typedef struct xt_case_dumpster_t xt_case_dumpster_t;
 xt_core_bool_t xt_case_dumpster_add(xt_case_dumpster_t *dumpster,
     void *object);
 
-xt_case_dumpster_t *xt_case_dumpster_create
-(xt_core_iobject_t *iobject);
+xt_case_dumpster_t *xt_case_dumpster_create(xt_core_iobject_t *iobject);
 
 void xt_case_dumpster_destroy(xt_case_dumpster_t *dumpster);
 

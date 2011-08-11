@@ -12,8 +12,9 @@ void *xt_pingpong_engine_create(xt_net_server_system_t *xt_net_server,
 
 void xt_pingpong_engine_destroy(void *engine_object);
 
-xt_net_server_system_handle_message_f xt_pingpong_engine_get_handler_for_message
-(void *engine_object, void *message_object);
+xt_net_server_system_handle_message_f
+xt_pingpong_engine_get_handler_for_message(void *engine_object,
+    void *message_object);
 
 void xt_pingpong_engine_maintain(void *engine_object);
 

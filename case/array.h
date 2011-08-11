@@ -23,7 +23,8 @@ unsigned long xt_case_array_count_non_null_objects
 (xt_case_array_t *array);
 
 xt_case_array_t *xt_case_array_create(unsigned long initial_size,
-    xt_core_object_compare_f compare, xt_core_object_copy_f copy, xt_core_object_destroy_f destroy);
+    xt_core_object_compare_f compare, xt_core_object_copy_f copy,
+    xt_core_object_destroy_f destroy);
 
 xt_case_array_t *xt_case_array_create_from_message
 (xt_core_object_compare_f compare_object, xt_core_object_copy_f copy,
@@ -71,14 +72,12 @@ void xt_case_array_iterate_start(xt_case_array_t *array);
 
 void xt_case_array_print(xt_case_array_t *array);
 
-void xt_case_array_remove(xt_case_array_t *array,
-    unsigned long index);
+void xt_case_array_remove(xt_case_array_t *array, unsigned long index);
 
-void xt_case_array_replace(xt_case_array_t *array,
-    unsigned long index, void *object);
-
-void xt_case_array_replace_random(xt_case_array_t *array,
+void xt_case_array_replace(xt_case_array_t *array, unsigned long index,
     void *object);
+
+void xt_case_array_replace_random(xt_case_array_t *array, void *object);
 
 xt_core_bool_t xt_case_array_resize(xt_case_array_t *array,
     unsigned long new_size);

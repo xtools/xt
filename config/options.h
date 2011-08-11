@@ -12,7 +12,8 @@ xt_config_options_t *xt_config_options_create(int argc, char *argv[],
 
 void xt_config_options_destroy(xt_config_options_t *options);
 
-xt_core_bool_t xt_config_options_find(xt_config_options_t *options, char *name);
+xt_core_bool_t xt_config_options_find(xt_config_options_t *options,
+    char *name);
 
 xt_core_bool_t xt_config_options_find_as_double(xt_config_options_t *options,
     char *name, double *value, double default_value);

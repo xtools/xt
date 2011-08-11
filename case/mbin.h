@@ -37,7 +37,6 @@ void xt_case_mbin_iterate_start(xt_case_mbin_t *mbin);
 
 void *xt_case_mbin_iterate_next(xt_case_mbin_t *mbin);
 
-xt_core_bool_t xt_case_mbin_remove(xt_case_mbin_t *mbin,
-    void *decoy_object);
+xt_core_bool_t xt_case_mbin_remove(xt_case_mbin_t *mbin, void *decoy_object);
 
 #endif

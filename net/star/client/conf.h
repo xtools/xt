@@ -17,6 +17,7 @@ typedef struct xt_net_star_client_conf_t xt_net_star_client_conf_t;
 
 xt_net_star_client_conf_t *xt_net_star_client_conf_create(char *conf_filename);
 
-void xt_net_star_client_conf_destroy(xt_net_star_client_conf_t *starclient_conf);
+void xt_net_star_client_conf_destroy
+(xt_net_star_client_conf_t *starclient_conf);
 
 #endif

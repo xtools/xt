@@ -31,7 +31,6 @@ xt_core_bool_t xt_file_basic_get_line_count(xt_file_basic_t *file,
 
 xt_core_bool_t xt_file_basic_write_char(xt_file_basic_t *file, int c);
 
-xt_core_bool_t xt_file_basic_write_string(xt_file_basic_t *file,
-    char *string);
+xt_core_bool_t xt_file_basic_write_string(xt_file_basic_t *file, char *string);
 
 #endif

@@ -23,10 +23,11 @@ xt_case_array_t *xt_file_csv_get_field_by_index_as_array(xt_file_csv_t *csv,
 
 unsigned long xt_file_csv_get_field_count(xt_file_csv_t *csv);
 
-xt_core_bool_t xt_file_csv_get_field_index(xt_file_csv_t *csv, char *field_name,
-    unsigned long *field_index);
+xt_core_bool_t xt_file_csv_get_field_index(xt_file_csv_t *csv,
+    char *field_name, unsigned long *field_index);
 
-char *xt_file_csv_get_field_name(xt_file_csv_t *csv, unsigned long field_index);
+char *xt_file_csv_get_field_name(xt_file_csv_t *csv,
+    unsigned long field_index);
 
 unsigned long xt_file_csv_get_object_count(xt_file_csv_t *csv);
 
@@ -75,11 +76,11 @@ short xt_file_csv_get_value_by_name_as_short(xt_file_csv_t *csv,
 char *xt_file_csv_get_value_by_name_as_string(xt_file_csv_t *csv,
     unsigned long object_index, char *field_name);
 
-unsigned char xt_file_csv_get_value_by_name_as_unsigned_char(xt_file_csv_t *csv,
-    unsigned long object_index, char *field_name);
+unsigned char xt_file_csv_get_value_by_name_as_unsigned_char
+(xt_file_csv_t *csv, unsigned long object_index, char *field_name);
 
-unsigned long xt_file_csv_get_value_by_name_as_unsigned_long(xt_file_csv_t *csv,
-    unsigned long object_index, char *field_name);
+unsigned long xt_file_csv_get_value_by_name_as_unsigned_long
+(xt_file_csv_t *csv, unsigned long object_index, char *field_name);
 
 unsigned short xt_file_csv_get_value_by_name_as_unsigned_short
 (xt_file_csv_t *csv, unsigned long object_index, char *field_name);

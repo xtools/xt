@@ -30,10 +30,12 @@ xt_core_bool_t xt_net_server_system_engine_run_thread_quiesce_requested
 (xt_net_server_system_t *server, xt_net_engine_id_t engine_id,
     unsigned short thread_index);
 
-xt_net_server_system_handle_message_f xt_net_server_system_get_handler_for_message
-(xt_net_server_system_t *server, void *message_object);
+xt_net_server_system_handle_message_f
+xt_net_server_system_get_handler_for_message(xt_net_server_system_t *server,
+    void *message_object);
 
-xt_config_system_t *xt_net_server_system_get_config_system(xt_net_server_system_t *server);
+xt_config_system_t *xt_net_server_system_get_config_system
+(xt_net_server_system_t *server);
 
 void xt_net_server_system_get_stats(xt_net_server_system_t *server,
     xt_net_server_stats_t *server_stats);
@@ -43,27 +45,30 @@ void xt_net_server_system_print_stats(xt_net_server_system_t *server);
 void xt_net_server_system_process_messages(xt_net_server_system_t *server,
     xt_net_engine_id_t engine_id, unsigned short thread_index);
 
-xt_core_bool_t xt_net_server_system_register_engine(xt_net_server_system_t *server,
-    xt_net_engine_id_t engine_id, void *custom_server_context,
-    xt_net_engine_iengine_t *iengine, unsigned short min_run_threads,
-    unsigned short max_run_threads, xt_net_maintain_t maintain_schedule,
-    unsigned long message_type_count);
+xt_core_bool_t xt_net_server_system_register_engine
+(xt_net_server_system_t *server, xt_net_engine_id_t engine_id,
+    void *custom_server_context, xt_net_engine_iengine_t *iengine,
+    unsigned short min_run_threads, unsigned short max_run_threads,
+    xt_net_maintain_t maintain_schedule, unsigned long message_type_count);
 
-void xt_net_server_system_register_message_handler(xt_net_server_system_t *server,
-    xt_net_engine_id_t engine_id, unsigned long message_type,
+void xt_net_server_system_register_message_handler
+(xt_net_server_system_t *server, xt_net_engine_id_t engine_id,
+    unsigned long message_type,
     xt_net_server_system_handle_message_f message_handler);
 
-xt_core_bool_t xt_net_server_system_send_message(xt_net_server_system_t *server,
-    void *message_object);
+xt_core_bool_t xt_net_server_system_send_message
+(xt_net_server_system_t *server, void *message_object);
 
 void xt_net_server_system_set_unresponsive_client_time_seconds
-(xt_net_server_system_t *server, unsigned long unresponsive_client_time_seconds);
+(xt_net_server_system_t *server,
+    unsigned long unresponsive_client_time_seconds);
 
 xt_core_bool_t xt_net_server_system_start(xt_net_server_system_t *server);
 
 xt_case_list_t *xt_net_server_system_take_unprocessed_messages
 (xt_net_server_system_t *server);
 
-xt_case_list_t *xt_net_server_system_take_unsent_messages(xt_net_server_system_t *server);
+xt_case_list_t *xt_net_server_system_take_unsent_messages
+(xt_net_server_system_t *server);
 
 #endif

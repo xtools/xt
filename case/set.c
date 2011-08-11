@@ -241,6 +241,27 @@ void *xt_case_set_copy(void *set_object)
   return copy;
 }
 
+xt_case_set_t *xt_case_set_create_from_difference(xt_case_set_t *set_a,
+    xt_case_set_t *set_b)
+{
+  assert(set_a);
+  assert(set_b);
+  xt_case_set_t *difference;
+
+  difference = xt_case_set_copy(set_a);
+  if (difference) {
+    if (!xt_case_set_expunge(difference, set_b)) {
+      xt_core_trace("x_case_set_expunge");
+      xt_case_set_destroy(difference);
+      difference = NULL;
+    }
+  } else {
+    xt_core_trace("x_case_set_copy");
+  }
+
+  return difference;
+}
+
 xt_case_set_t *xt_case_set_create_from_message
 (xt_core_iobject_t *iobject, xt_core_message_t *message,
     xt_core_message_create_from_message_f create_from_message)
@@ -288,27 +309,6 @@ xt_case_set_t *xt_case_set_create_from_union(xt_case_set_t *set_a,
   }
 
   return union_set;
-}
-
-xt_case_set_t *xt_case_set_difference(xt_case_set_t *set_a,
-    xt_case_set_t *set_b)
-{
-  assert(set_a);
-  assert(set_b);
-  xt_case_set_t *difference;
-
-  difference = xt_case_set_copy(set_a);
-  if (difference) {
-    if (!xt_case_set_expunge(difference, set_b)) {
-      xt_core_trace("x_case_set_expunge");
-      xt_case_set_destroy(difference);
-      difference = NULL;
-    }
-  } else {
-    xt_core_trace("x_case_set_copy");
-  }
-
-  return difference;
 }
 
 void xt_case_set_dont_destroy_objects(xt_case_set_t *set)

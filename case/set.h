@@ -37,6 +37,9 @@ void *xt_case_set_copy(void *set_object);
 
 xt_case_set_t *xt_case_set_create(xt_core_iobject_t *iobject);
 
+xt_case_set_t *xt_case_set_create_from_difference(xt_case_set_t *set_a,
+    xt_case_set_t *set_b);
+
 xt_case_set_t *xt_case_set_create_from_message
 (xt_core_iobject_t *iobject, xt_core_message_t *message,
     xt_core_message_create_from_message_f create_from_message);
@@ -45,12 +48,6 @@ xt_case_set_t *xt_case_set_create_from_union(xt_case_set_t *set_a,
     xt_case_set_t *set_b);
 
 void xt_case_set_destroy(void *set_object);
-
-/*
-  rename as a verb?
-*/
-xt_case_set_t *xt_case_set_difference(xt_case_set_t *set_a,
-    xt_case_set_t *set_b);
 
 void xt_case_set_dont_destroy_objects(xt_case_set_t *set);
 
@@ -72,13 +69,11 @@ xt_case_list_t *xt_case_set_get_as_list(xt_case_set_t *set);
 char *xt_case_set_get_as_delimited_string(xt_case_set_t *set,
     xt_core_object_get_as_string_f get_as_string, const char *delimiter);
 
-xt_core_object_compare_f xt_case_set_get_compare_function
-(xt_case_set_t *set);
+xt_core_object_compare_f xt_case_set_get_compare_function(xt_case_set_t *set);
 
 xt_core_object_copy_f xt_case_set_get_copy_function(xt_case_set_t *set);
 
-xt_core_object_destroy_f xt_case_set_get_destroy_function
-(xt_case_set_t *set);
+xt_core_object_destroy_f xt_case_set_get_destroy_function(xt_case_set_t *set);
 
 xt_core_iobject_t *xt_case_set_get_iobject(xt_case_set_t *set);
 

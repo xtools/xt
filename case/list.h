@@ -18,8 +18,7 @@ xt_core_bool_t xt_case_list_add_to_message(xt_case_list_t *list,
     xt_core_message_t *message,
     xt_core_message_add_to_message_f add_to_message);
 
-xt_core_bool_t xt_case_list_add_first(xt_case_list_t *list,
-    void *object);
+xt_core_bool_t xt_case_list_add_first(xt_case_list_t *list, void *object);
 
 xt_core_bool_t xt_case_list_add_last(xt_case_list_t *list, void *object);
 
@@ -32,8 +31,8 @@ void *xt_case_list_copy(void *list_object);
 xt_case_list_t *xt_case_list_create(xt_core_object_compare_f compare,
     xt_core_object_copy_f copy, xt_core_object_destroy_f destroy);
 
-xt_case_list_t *xt_case_list_create_from_array_n
-(xt_case_array_t *array, unsigned long max_size);
+xt_case_list_t *xt_case_list_create_from_array_n(xt_case_array_t *array,
+    unsigned long max_size);
 
 xt_case_list_t *xt_case_list_create_from_message
 (xt_core_object_compare_f compare, xt_core_object_copy_f copy,
