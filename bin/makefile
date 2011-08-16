@@ -2,41 +2,51 @@ machine = $(shell uname -m)
 uname = $(shell uname)
 os = $(strip $(uname))
 ifeq ($(os),Darwin)
-	platform = -DXT_PLATFORM_DARWIN
-else ifeq ($(os),Linux)
-	platform = -DXT_PLATFORM_LINUX
+  platform = -DXT_PLATFORM_DARWIN
+endif
+ifeq ($(os),Linux)
+  platform = -DXT_PLATFORM_LINUX
+endif
+ifeq ($(os),NetBSD)
+  platform = -DXT_PLATFORM_NETBSD
 endif
 
+build = -DXT_BUILD_DEVELOPMENT
+debugging = -g
+optimization = -O0
+mode_identifier = +
+warnings = -Wall -Werror
+ifeq ($(MAKECMDGOALS),demo)
+  build = -DXT_BUILD_DEMO
+  debugging = -DNDEBUG
+  optimization = -O3
+  mode_identifier = ~
+  warnings = -Wall -Werror
+endif
 ifeq ($(MAKECMDGOALS),release)
-	build = -DXT_BUILD_RELEASE
-	debugging = -DNDEBUG
-	optimization = -O3
-	mode_identifier = \#
-	warnings = -Wall -Werror
-else ifeq ($(MAKECMDGOALS),demo)
-	build = -DXT_BUILD_DEMO
-	debugging = -DNDEBUG
-	optimization = -O3
-	mode_identifier = ~
-	warnings = -Wall -Werror
-else
-	build = -DXT_BUILD_DEVELOPMENT
-	debugging = -g
-	optimization = -O0
-	mode_identifier = +
-	warnings = -Wall -Werror
+  build = -DXT_BUILD_RELEASE
+  debugging = -DNDEBUG
+  optimization = -O3
+  mode_identifier = \#
+  warnings = -Wall -Werror
 endif
 
 compiler = gcc
+libraries = -lm -lpthread
 library_paths = -L.
 ifeq ($(os),Darwin)
+  libraries += -luuid
   library_paths += -L/opt/local/lib
-	compiler = /opt/local/bin/gcc-mp-4.6
-else ifeq ($(os),Linux)
+  compiler = /opt/local/bin/gcc-mp-4.6
+endif
+ifeq ($(os),Linux)
+  libraries += -luuid
+  library_paths += -L/usr/local/lib -L/usr/lib
+endif
+ifeq ($(os),NetBSD)
   library_paths += -L/usr/local/lib -L/usr/lib
 endif
 include_paths = -I$(XT)/.. -I$(XTC)
-libraries = -lm -lpthread -luuid
 link_options = -ansi $(build) $(platform) $(debugging) $(optimization) $(warnings) $(include_paths) -D_GNU_SOURCE $(library_paths) $(libraries)
 compile_options = -ansi $(build) $(platform) $(debugging) $(optimization) $(warnings) $(include_paths) -D_GNU_SOURCE
 

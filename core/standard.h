@@ -5,10 +5,6 @@
 #include <fcntl.h>
 #include <math.h>
 
-#include <ncurses.h>
-#undef false
-#undef true
-
 #include <pthread.h>
 #include <signal.h>
 #include <stdarg.h>
