@@ -1,5 +1,15 @@
 #include "xt/core/uuid.h"
 
+int xt_core_uuid_compare(void *uuid_a_object, void *uuid_b_object)
+{
+  assert(uuid_a_object);
+  assert(uuid_b_object);
+  xt_core_uuid_t *uuid_a = uuid_a_object;
+  xt_core_uuid_t *uuid_b = uuid_b_object;
+
+  return uuid_compare(uuid_a->uuid, uuid_b->uuid);
+}
+
 /*
 xt_core_bool_t xt_core_uuid_compare_equal(void *uuid_a_object, void *uuid_b_object)
 {
