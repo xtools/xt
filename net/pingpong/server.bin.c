@@ -44,9 +44,10 @@ int main(int argc, char *argv[])
     xt_core_trace_exit("x_audit_log_create");
   }
 
-  xt_net_engine_iengine_init(&iengine, xt_pingpong_engine_create, xt_pingpong_engine_destroy,
-      xt_pingpong_engine_get_handler_for_message, xt_pingpong_engine_maintain,
-      xt_pingpong_engine_run, xt_pingpong_engine_start, xt_pingpong_engine_stop);
+  xt_net_engine_iengine_init(&iengine, xt_pingpong_engine_create,
+      xt_pingpong_engine_destroy, xt_pingpong_engine_get_handler_for_message,
+      xt_pingpong_engine_maintain, xt_pingpong_engine_run,
+      xt_pingpong_engine_start, xt_pingpong_engine_stop);
 
   xt_core_imessage_init(&messagey, xt_core_message_destroy,
       xt_core_message_get_client_socket, xt_core_message_get_engine_id,

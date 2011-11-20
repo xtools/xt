@@ -16,7 +16,8 @@ struct xt_file_basic_t {
   xt_case_list_t *token_list_cache;
 };
 
-xt_file_basic_t *xt_file_basic_create(const char *filename, xt_file_mode_t mode)
+xt_file_basic_t *xt_file_basic_create
+(const char *filename, xt_file_mode_t mode)
 {
   assert(filename);
   xt_file_basic_t *file;
