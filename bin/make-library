@@ -11,7 +11,7 @@ library_name=lib$library_id.a
 if [ "$XTQ" ]; then
   echo $mode_identifier $library_name
 else
-  echo "ar rcs $XT/$library_name $objects"
+  echo "ar rcs $XT/$library_name [objects]"
 fi
 
 objects=`find $XT -name "*.o"`
