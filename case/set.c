@@ -473,6 +473,12 @@ char *xt_case_set_get_as_delimited_string(xt_case_set_t *set,
   return string;
 }
 
+void xt_case_set_init_iobject(xt_core_iobject_t *iobject)
+{
+  xt_core_iobject_init(iobject, xt_case_set_compare, NULL, xt_case_set_copy,
+      xt_case_set_destroy, NULL, NULL);
+}
+
 xt_core_bool_t xt_case_set_overlaps(xt_case_set_t *set_a,
     xt_case_set_t *set_b)
 {

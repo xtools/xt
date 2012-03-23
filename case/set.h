@@ -79,6 +79,8 @@ xt_core_iobject_t *xt_case_set_get_iobject(xt_case_set_t *set);
 
 unsigned long xt_case_set_get_size(xt_case_set_t *set);
 
+void xt_case_set_init_iobject(xt_core_iobject_t *iobject);
+
 void *xt_case_set_iterate_next(xt_case_set_t *set);
 
 void xt_case_set_iterate_remove(xt_case_set_t *set);
